@@ -48,7 +48,7 @@
 	let active = $derived(url.hash || '#follow-someone');
 
 	let linkURL = $derived(user && getAthleteLink(user.name));
-	let email = $derived(link && `staytracked-${link.uuid}@${env.PUBLIC_SMTP_PROXY_HOSTNAME}`);
+	let email = $derived(link && `persistent-livetrack-${link.uuid}@${env.PUBLIC_SMTP_PROXY_HOSTNAME}`);
 
 	let vcard = $derived(
 		link &&

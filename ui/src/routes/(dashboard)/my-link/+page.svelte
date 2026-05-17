@@ -79,13 +79,11 @@
 						class="mx-auto flex w-full max-w-2xl flex-col content-start gap-4 p-4 py-5 pb-9 text-justify"
 					>
 						<div class="p-2">
-							<p class="mt-6 text-center text-xl text-muted-foreground">
+							<p class="text-muted-foreground mt-6 text-center text-xl">
 								{m.no_livetrack_link_setup_yet()}
 							</p>
 							<div class="mt-6 flex justify-center gap-4">
-								<Button size="lg" href={pages().gettingStarted.url}
-									>{pages().gettingStarted.title}</Button
-								>
+								<Button size="lg" href={pages().setupLink.url}>{pages().setupLink.title}</Button>
 							</div>
 							{#if trackingLink}
 								<LinkSetupAlert
@@ -142,7 +140,7 @@
 											</Select.Root>
 										</span>
 										<span
-											class="col-start-2 grid justify-items-start gap-1 pl-2 text-sm text-muted-foreground [&_p]:leading-relaxed"
+											class="text-muted-foreground col-start-2 grid justify-items-start gap-1 pl-2 text-sm [&_p]:leading-relaxed"
 										>
 											{#if trackingLink.isPublic}
 												{m.ma_anyone_with_the_link_description()}
@@ -171,8 +169,8 @@
 
 							<h3>{m.ma_people_with_access_title()}</h3>
 
-							<div class="mt-6 mb-4 flex flex-col gap-4 md:flex-row">
-								<p class="grow text-sm text-muted-foreground">
+							<div class="mb-4 mt-6 flex flex-col gap-4 md:flex-row">
+								<p class="text-muted-foreground grow text-sm">
 									{@html m.ma_people_with_access_text()}
 								</p>
 								<InvitePeopleForm action="?/invitePeople" />
@@ -188,13 +186,11 @@
 								</div>
 							{/if}
 						{:else}
-							<p class="mt-6 text-center text-xl text-muted-foreground">
+							<p class="text-muted-foreground mt-6 text-center text-xl">
 								{m.no_livetrack_link_setup_yet()}
 							</p>
 							<div class="mt-6 flex justify-center gap-4">
-								<Button size="lg" href={pages().gettingStarted.url}
-									>{pages().gettingStarted.title}</Button
-								>
+								<Button size="lg" href={pages().setupLink.url}>{pages().setupLink.title}</Button>
 							</div>
 							{#if trackingLink}
 								<LinkSetupAlert

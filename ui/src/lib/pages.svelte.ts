@@ -27,6 +27,12 @@ const _pages = {
 		url: '/getting-started',
 		icon: RocketIcon,
 	},
+	'setupLink': {
+		title: m.pages_getting_started(),
+		url: '/getting-started#setup-tracking',
+		icon: RocketIcon,
+		isVisible: false,
+	},
 	'myLink': {
 		title: m.pages_my_link(),
 		url: `/my-link`,

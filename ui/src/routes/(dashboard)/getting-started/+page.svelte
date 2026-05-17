@@ -45,7 +45,7 @@
 		}
 	]);
 	const url = new SvelteURL(page.url);
-	let active = $derived(url.hash || '#follow-someone');
+	let active = $derived(url.hash || '#setup-tracking');
 
 	let linkURL = $derived(user && getAthleteLink(user.name));
 	let email = $derived(link && `persistent-livetrack-${link.uuid}@${env.PUBLIC_SMTP_PROXY_HOSTNAME}`);

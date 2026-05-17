@@ -35,9 +35,13 @@ def extract_tracking_session(content: str) -> tuple[str, str]:
     raise Exception("No supported tracking link found in email body")
 
 
-@route("persistent-livetrack-(link_uuid)@(host)", link_uuid=".+")
+@route(
+    "(service)-(link_uuid)@(host)",
+    service="(garmin-)?persistent-livetrack",
+    link_uuid=".+"
+)
 @stateless
-def NEW_ACTIVITY(message, link_uuid: str, host: str) -> None:
+def NEW_ACTIVITY(message, service: str, link_uuid: str, host: str) -> None:
     try:
         session_link, source = extract_tracking_session(message.body())
         requests.put(

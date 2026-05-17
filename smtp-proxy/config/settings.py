@@ -7,7 +7,7 @@ relay_config = {"host": "0.0.0.0", "port": 8825}
 
 receiver_config = {"host": "0.0.0.0", "port": 25}
 
-handlers = ["app.handlers.garmin-persistent-livetrack"]
+handlers = ["app.handlers.persistent-livetrack"]
 
 router_defaults = {"host": ".+"}
 

@@ -14,14 +14,13 @@
 	const usesChoices = [
 		{
 			value: 'single',
-			label: 'Single-use',
-			description: 'The link will expire after used by one user.'
+			label: m.single_use_label(),
+			description: m.single_use_description()
 		},
 		{
 			value: 'multi',
-			label: 'Multi-use',
-			description:
-				'The link can be used by any number of users as long as its expiry date is not passed.'
+			label: m.multi_use_label(),
+			description: m.multi_use_description()
 		}
 	] as const;
 
@@ -31,15 +30,15 @@
 	const usesDescription = $derived(usesChoices.find((f) => f.value === usesValue)?.description);
 
 	const expireInChoices = [
-		{ value: 'never', label: 'Never' },
-		{ value: '30m', label: '30 minutes' },
-		{ value: '1h', label: '1 hour' },
-		{ value: '6h', label: '6 hours' },
-		{ value: '1d', label: '1 day' },
-		{ value: '7d', label: '7 days' },
-		{ value: '30d', label: '30 days' },
-		{ value: '3M', label: '3 months' },
-		{ value: '1y', label: '1 year' }
+		{ value: 'never', label: m.never() },
+		{ value: '30m', label: m.x_minutes({ count: 30 }) },
+		{ value: '1h', label: m.x_hours({ count: 1 }) },
+		{ value: '6h', label: m.x_hours({ count: 6 }) },
+		{ value: '1d', label: m.x_days({ count: 1 }) },
+		{ value: '7d', label: m.x_days({ count: 7 }) },
+		{ value: '30d', label: m.x_days({ count: 30 }) },
+		{ value: '3M', label: m.x_months({ count: 3 }) },
+		{ value: '1y', label: m.x_years({ count: 1 }) }
 	] as const;
 
 	let expireInValue = $state<(typeof expireInChoices)[number]['value']>('never');
@@ -54,12 +53,13 @@
 
 <Dialog.Root bind:open>
 	<Dialog.Trigger class={buttonVariants({ variant: 'default' })} type="button">
-		<Share2Icon /> Invite people
+		<Share2Icon />
+		{m.invite_people_title()}
 	</Dialog.Trigger>
 	<Dialog.Content>
 		<Dialog.Header>
-			<Dialog.Title>Invite people</Dialog.Title>
-			<Dialog.Description>Invite people to follow you by giving them a link.</Dialog.Description>
+			<Dialog.Title>{m.invite_people_title()}</Dialog.Title>
+			<Dialog.Description>{m.invite_people_text()}</Dialog.Description>
 		</Dialog.Header>
 
 		<form
@@ -80,7 +80,7 @@
 		>
 			<div class="grid gap-4 py-4">
 				<div class="grid grid-cols-4 items-center gap-x-4">
-					<Label for="username" class="text-right">Uses</Label>
+					<Label for="username" class="text-right">{m.uses_label()}</Label>
 					<Select.Root type="single" name="uses" bind:value={usesValue}>
 						<Select.Trigger class="col-span-3 w-full">
 							{usesContent}
@@ -100,7 +100,7 @@
 				</div>
 
 				<div class="grid grid-cols-4 items-center gap-4">
-					<Label for="username" class="text-right">Expire in</Label>
+					<Label for="username" class="text-right">{m.expire_in_label()}</Label>
 					<Select.Root type="single" name="expires_in" bind:value={expireInValue}>
 						<Select.Trigger class="col-span-3 w-full">
 							{expireInContent}
@@ -126,7 +126,8 @@
 					form?.requestSubmit();
 				}}
 			>
-				<LinkIcon /> Generate invite link
+				<LinkIcon />
+				{m.generate_invite_link_label()}
 			</Button>
 		</Dialog.Footer>
 	</Dialog.Content>

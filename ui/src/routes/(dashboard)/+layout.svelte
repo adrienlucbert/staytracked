@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import { GrowContainer } from '$lib/components/ui/layout';
 	import { Separator } from '$lib/components/ui/separator';
 	import { currentPage } from '$lib/pages.svelte';

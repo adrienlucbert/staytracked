@@ -1,5 +1,5 @@
 <script lang="ts">
-	import AccountSidebar from '$lib/components/sidebars/account-sidebar.svelte';
+	import Sidebar from '$lib/components/sidebars/sidebar.svelte';
 	import FollowingTable from './following-table.svelte';
 	import {
 		EditUserForm,
@@ -16,12 +16,26 @@
 	let { data } = $props();
 	let { user, flags, vapid_public_key, appName } = data;
 
+	const sidebarItems = $derived([
+		{
+			anchor: '#profile',
+			label: m.user_profile_title()
+		},
+		{
+			anchor: '#following',
+			label: m.following_title()
+		},
+		{
+			anchor: '#notifications',
+			label: m.notifications_title()
+		}
+	]);
 	const url = new SvelteURL(page.url);
 	let active = $derived(url.hash || '#profile');
 </script>
 
 <div class="flex h-full w-full flex-col md:flex-row">
-	<AccountSidebar {url} {active} />
+	<Sidebar items={sidebarItems} {url} {active} />
 	<Separator class="mx-0 hidden md:block" orientation="vertical" />
 	<div class="flex w-full flex-col">
 		{#key active}

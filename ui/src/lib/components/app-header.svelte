@@ -56,6 +56,9 @@
 								<a href={pages().account.url}>
 									<DropdownMenu.Item>{pages().account.title}</DropdownMenu.Item>
 								</a>
+								<a href={pages().myLink.url}>
+									<DropdownMenu.Item>{pages().myLink.title}</DropdownMenu.Item>
+								</a>
 								<a href="/auth/signout">
 									<DropdownMenu.Item>{m.app_header_sign_out()}</DropdownMenu.Item>
 								</a>
@@ -90,9 +93,9 @@
 					</DropdownMenu.Root>
 
 					<Button onclick={toggleMode} variant="ghost" size="icon">
-						<SunIcon class="rotate-0 scale-100 !transition-all dark:-rotate-90 dark:scale-0" />
+						<SunIcon class="scale-100 rotate-0 !transition-all dark:scale-0 dark:-rotate-90" />
 						<MoonIcon
-							class="absolute rotate-90 scale-0 !transition-all dark:rotate-0 dark:scale-100"
+							class="absolute scale-0 rotate-90 !transition-all dark:scale-100 dark:rotate-0"
 						/>
 						<span class="sr-only">{m.app_header_toggle_theme()}</span>
 					</Button>

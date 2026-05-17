@@ -6,49 +6,58 @@
 	"pages_getting_started": "Getting started",
 	"pages_manage_access": "Manage access",
 	"pages_account": "Account",
+	"pages_my_link": "My link",
 	"pages_signout": "Sign out",
 	"home_page_one": "One",
 	"home_page_tracking_link": "Tracking Link",
 	"home_page_share_notify_ride": "Share, Notify, Ride",
 	"home_page_worry_free": "Worry-Free",
-	"home_page_subtitle": "Transform your <b>ever-changing</b> Garmin Live-Tracking link into a <b>persistent</b> URL and ensure <b>continuous updates</b> with built-in activity start notifications for your <b>friends and family</b>.",
+	"home_page_subtitle": "Transform your <b>ever-changing</b> safety tracking link into a <b>persistent</b> URL and ensure <b>continuous updates</b> with built-in activity start notifications for your <b>friends and family</b>.",
 	"hiw_create_your_link_title": "Create your link",
-	"hiw_create_your_link_text": "When you create your own personal persistent LiveTrack link, we give you a dedicated contact to add to your phone — it contains an email address that connects to our service.",
-	"hiw_set_in_garmin_app_title": "Set it in Garmin Connect™",
-	"hiw_set_in_garmin_app_text": "In the <a href=\"https://www.garmin.com/en-US/p/125677/\">Garmin Connect™ app</a>, you add our contact as a recipient for your LiveTrack sessions. That way, whenever you start LiveTrack, Garmin will send the tracking email to us.",
+	"hiw_create_your_link_text": "When you create your own personal persistent tracking link, we give you a dedicated contact to add to your phone — it contains an email address that connects to our service.",
+	"hiw_set_in_device_app_title": "Set it in your device's app",
+	"hiw_set_in_device_app_text": "In your device's companion app (Garmin Connect™ or the Coros app), you add our contact as a recipient for your tracking sessions. That way, whenever you start tracking, your device will send the tracking email to us.",
 	"hiw_we_handle_the_link_title": "We handle the link for you",
-	"hiw_we_handle_the_link_text": "Every time your start a LiveTrack session, Garmin sends us a link, our service catches it, updates your personal page, and makes sure it always shows the newest link.",
+	"hiw_we_handle_the_link_text": "Every time you start a tracking session, your device sends us a link, our service catches it, updates your personal page, and makes sure it always shows the newest link.",
 	"hiw_share_once_done_forever_title": "Share once, done forever",
-	"hiw_share_once_done_forever_text": "Instead of sending your friends a new link every ride, just share your personal static URL once. They can bookmark it — it will always point to your most recent LiveTrack.",
+	"hiw_share_once_done_forever_text": "Instead of sending your friends a new link every ride, just share your personal static URL once. They can bookmark it — it will always point to your most recent tracking session.",
 	"hiw_lets_get_started": "Let's get started!",
-	"gs_follow_those_steps": "Follow those steps to setup your persistent LiveTrack link with your Garmin device.",
-	"gs_create_a_livetrack_recipient_title": "Create a LiveTrack recipient",
-	"gs_create_a_livetrack_recipient_text": "For Garmin to notify us when you start a LiveTrack session, we need you to add us as recipient for your LiveTrack.",
+	"gs_follow_those_steps": "Follow those steps to set up your persistent tracking link.",
+	"gs_create_a_tracking_recipient_title": "Create a tracking recipient",
+	"gs_create_a_tracking_recipient_text": "For your device to notify us when you start a tracking session, we need you to add us as a recipient for your tracking emails.",
 	"gs_download_vcard": "Download vCard",
 	"gs_scan_or_download_contact": "First, scan or download this contact card that contains a dedicated recipient email address.",
-	"gs_set_it_in_garmin_connect_title": "Set it in Garmin Connect™",
+	"gs_set_it_in_your_app_title": "Set it in your device's app",
+	"gs_set_it_in_your_app_text": "Select your device below and follow the instructions to add our contact as a recipient for your tracking sessions.",
 	"gs_set_it_in_garmin_connect_text": "In the <a href=\"https://www.garmin.com/en-US/p/125677/\">Garmin Connect™ app</a>, add our contact as an email recipient for your LiveTrack sessions. That way, whenever you start LiveTrack, Garmin will send the tracking email to us.",
 	"gs_heres_a_video": "Here's a video showing you how to do this:",
 	"gs_turn_on_auto_start_title": "Turn on Auto Start",
 	"gs_turn_on_auto_start_text": "<p>It is recommended that you turn on Auto Start from the Garmin Connect™ app's LiveTrack menu. This way, your tracking link here is automatically updated, without you needing to manually start a LiveTrack session.</p><p>Beware, while LiveTrack is active on your Garmin device, it consumes more battery on both your phone and Garmin device.</p>",
+	"gs_set_it_in_coros_app_text": "In the <a href=\"https://coros.com/getapp\">Coros app</a>, open <b>Profile</b> → <b>Safety Alerts</b>, click <b>Add Emergency Contact</b>. You can click the Contact icon in the Name field to select the newly created recipient, or you can fill it in manually.",
+	"gs_email_field_empty_title": "The Email field doesn't fill automatically",
+	"gs_email_field_empty_text": "If the Email field doesn't fill automatically when you select the contact, you can find the dedicated email address in the contact details. You can also copy it from below:",
+	"gs_enable_safety_alerts": "With the emergency contact added, enable <b>Safety Alerts</b> to complete the setup. With that, whenever you start an activity, Coros will send the tracking email to us.",
 	"gs_try_it_out_title": "Try it out!",
 	"link_setup_youre_all_set": "You're all set!",
 	"link_setup_we_received_notice": "We received notice of your new activity, you're good to go!",
-	"link_setup_preview_your_latest_activity": "You can preview your latest activty in the",
+	"link_setup_preview_your_latest_activity": "You can preview your latest activity in the",
 	"link_setup_tab": " tab.",
 	"link_setup_waiting_for_activity": "We're waiting for you to start a new activity",
-	"link_setup_start_new_activity": "Start a new activity on your Garmin device and start the LiveTrack session from your Garmin Connect™ app to verify that you set it up correctly.",
-	"copy_link": "Copy Link",
+	"link_setup_start_new_activity": "Start a new activity on your device and start a tracking session from your companion app to verify that you set it up correctly.",
+	"copy_link": "Copy link",
 	"link_copied": "Link copied to clipboard.",
+	"copy_email": "Copy email",
+	"email_copied": "Email address copied to clipboard.",
 	"an_error_occurred": "An error occurred",
 	"unexpected_server_error": "Unexpected server error {code}",
+	"ml_section_preview_title": "Preview",
 	"ma_general_access": "General access",
 	"ma_restricted": "Restricted",
-	"ma_restricted_description": "Only people with explicit access can open your LiveTrack.",
+	"ma_restricted_description": "Only people with explicit access can open your tracking link.",
 	"ma_anyone_with_the_link": "Anyone with the link",
-	"ma_anyone_with_the_link_description": "Anyone on the internet with the link can view your LiveTrack.",
+	"ma_anyone_with_the_link_description": "Anyone on the internet with the link can view your tracking session.",
 	"ma_people_with_access_title": "People with access",
-	"ma_people_with_access_text": "The list of users with explicit access to your LiveTrack. If your link access is <i>restricted</i>, only those listed below that have been approved will be able to access your LiveTrack.",
+	"ma_people_with_access_text": "The list of users with explicit access to your tracking link. If your link access is <i>restricted</i>, only those listed below that have been approved will be able to access your tracking link.",
 	"followers_issue_loading": "There was an issue loading followers.",
 	"followers_user_header": "User",
 	"followers_notifications_header": "Notifications",
@@ -65,13 +74,13 @@
 	"followers_permanently": "Permanently {action} access",
 	"are_you_sure": "Are you sure?",
 	"ma_visits_history": "Visits history",
-	"no_livetrack_link_setup_yet": "You don't have a LiveTrack link setup yet.",
+	"no_livetrack_link_setup_yet": "You don't have a tracking link set up yet.",
 	"visits_detail_per_user": "Detail per user",
 	"visits_issue_loading": "There was an issue loading visits.",
 	"visits_label": "Visits",
 	"visitor": "Visitor",
 	"following_title": "Following",
-	"following_text": "The list of users you are following or sent a follow request to. If their link access is <i>restricted</i>, your follow request will need to be approved in order to access their LiveTrack.",
+	"following_text": "The list of users you are following or sent a follow request to. If their link access is <i>restricted</i>, your follow request will need to be approved in order to access their tracking link.",
 	"following_issue_loading": "There was an issue loading users you follow.",
 	"following_user_header": "User",
 	"following_notifications_header": "Notifications",
@@ -85,7 +94,7 @@
 	"notifications_title": "Notifications",
 	"notifications_text": "You can either choose to receive email notifications, push notifications on your browser or none at all. Push notifications on your browser are per-device. If you want to receive them on both your computer and phone, make sure to enable them on both devices via this page.",
 	"notifications_follow_request_title": "When someone wants to follow you",
-	"notifications_new_activity_title": "When someone you follow starts a new LiveTrack session",
+	"notifications_new_activity_title": "When someone you follow starts a new tracking session",
 	"notifications_email_label": "Toggle email notifications",
 	"notifications_webpush_label": "Toggle push notifications",
 	"request_access": "Request access",
@@ -97,7 +106,7 @@
 	"enable": "Enable",
 	"disable": "Disable",
 	"verify_email_title": "Verify your email",
-	"verify_email_text": "We've sent an email to {email} to verify your email address and activate your account.<br />Verifying your email adresse will let you activate email notifications and reset your password in case you lose it.",
+	"verify_email_text": "We've sent an email to {email} to verify your email address and activate your account.<br />Verifying your email address will let you activate email notifications and reset your password in case you lose it.",
 	"resend_email": "Resend email",
 	"enable_notifications_title": "Enable notifications on this device",
 	"enable_notifications_text": "Push notifications on this browser are not enabled yet. You can only receive push notifications on this device if you enabled notifications.",
@@ -125,7 +134,7 @@
 	"invalid_athlete_identifier": "Invalid athlete identifier.",
 	"tracking_link_does_not_exist": "This tracking link does not exist.",
 	"tracking_link_is_not_public": "This tracking link is not public.",
-	"livetrack_session_not_started": "This LiveTrack session has not started yet.",
+	"livetrack_session_not_started": "This tracking session has not started yet.",
 	"access_request_pending_approval": "Your access request is pending approval.",
 	"invalid_email_address": "Invalid email address",
 	"invalid_password": "Invalid password (min 8 characters)",
@@ -138,7 +147,7 @@
 	"invalid_action_token": "Token does not allow this action",
 	"invalid_oauth_provider": "Invalid OAuth provider: {provider}",
 	"invalid_user_uuid": "Invalid user UUID",
-	"invalid_livetrack_session": "Livetrack session is invalid",
+	"invalid_livetrack_session": "Tracking session is invalid",
 	"missing_cookie": "Missing '{name}' cookie",
 	"oauth_state_invalid_or_expired": "OAuth state is invalid or has expired",
 	"authentication": "Authentication",
@@ -175,7 +184,7 @@
 	"email_verification_success_text": "Your email address was successfully verified. You can now close this page.",
 	"email_verification_error_text": "Your email address couldn't be verified. {message}",
 	"reset_password_title": "Reset your password",
-	"reset_password_text": "Create a new pasword for your account",
+	"reset_password_text": "Create a new password for your account",
 	"new_password_label": "New password",
 	"new_password_placeholder": "Enter your new password",
 	"confirm_new_password_label": "Confirm your new password",
@@ -198,7 +207,7 @@
 	"mail_verify_email_p4": "If it wasn't you, please ignore this email.",
 	"mail_new_follow_request_subject": "{username} wants to follow you",
 	"mail_new_follow_request_title": "{username} requested to follow you on {appName}.",
-	"mail_new_follow_request_p1": "Approving this will allow them to access your LiveTrack and receive notifications when you start an activity.",
+	"mail_new_follow_request_p1": "Approving this will allow them to access your tracking link and receive notifications when you start an activity.",
 	"mail_new_follow_request_p2": "You can manage access to your link and see your follow requests in your {tab} tab:",
 	"mail_new_activity_subject": "{username} started a new activity",
 	"mail_new_activity_title": "{username} started a new activity.",
@@ -208,7 +217,7 @@
 	"notif_new_follow_request_title": "{username} wants to follow you",
 	"notif_new_follow_request_body": "You can review follow requests in your account.",
 	"notif_new_activity_title": "{username} started a new activity",
-	"push_notifications_not_setup_title": "Push notification are not setup",
+	"push_notifications_not_setup_title": "Push notifications are not set up",
 	"push_notifications_not_setup_body": "Configure push notifications in your {tab} page to receive notifications on this device.",
 	"push_notifications_not_setup_button": "Configure",
 	"install_drawer_title": "Install {appName}",
@@ -242,7 +251,105 @@
 	"invalid_username_slug": "Invalid username. Suggested: \"{slug}\"",
 	"app_footer_explore": "Explore",
 	"app_footer_notice": "Notice",
-	"app_footer_notice_text": "This service is in no way related to <a class=\"link\" href=\"https://www.garmin.com/\">Garmin&reg;</a> but extends and simplifies the use of its LiveTrack feature.",
+	"app_footer_notice_text": "This service is in no way related to <a class=\"link\" href=\"https://www.garmin.com/\">Garmin&reg;</a> or <a class=\"link\" href=\"https://www.coros.com/\">COROS&reg;</a> but extends and simplifies the use of their safety tracking features.",
 	"app_footer_how_it_works": "How it works",
-	"app_footer_self_host": "Self-Host"
+	"app_footer_self_host": "Self-Host",
+	"gs_section_follow_someone_title": "Follow someone",
+	"gs_section_share_tracking_title": "Share my tracking link",
+	"gs_section_setup_tracking_title": "Setup my tracking link",
+	"gs_follow_someone_intro": "Follow people to access their tracking link at any time and opt in to receive email or push notifications each time they start a new activity. If they made their tracking private, you will only be able to access it once they accept your follow request.",
+	"gs_follow_someone_via_link_title": "Visit their tracking link",
+	"gs_follow_someone_via_link_text": "If you already have someone's personal tracking link, open it in your browser. From there you can send them a follow request with the <b>Follow</b> button. Once they approve it (or if their link is public), you're in.",
+	"gs_follow_someone_via_invite_title": "Get invited directly",
+	"gs_follow_someone_via_invite_text": "The person you want to follow can invite you directly from their Manage Access page. They'll get a link to give you that directly adds you to their followers.",
+	"gs_share_tracking_intro": "Share your tracking so that others can follow your activities live and opt in to receive email or push notifications when you start your activity.",
+	"gs_invite_public_link_title": "Share your link publicly",
+	"gs_invite_public_link_text": "By default you tracking link is public. This means anyone who has the link can view your ongoing activity. Just share the URL below with whoever you want. You can make your link to private in the Manage access page.",
+	"gs_invite_private_link_title": "Keep it private with explicit access",
+	"gs_invite_private_link_text": "If your tracking link is set to <b>restricted</b>, only approved followers can view it. You can invite people directly or approve incoming follow requests from the Manage access page.",
+	"invite_people_title": "Invite people",
+	"invite_people_text": "Invite people to follow you by giving them a link.",
+	"uses_label": "Uses",
+	"single_use_label": "Single-use",
+	"single_use_description": "The link will expire after used by one user.",
+	"multi_use_label": "Multi-use",
+	"multi_use_description": "The link can be used by any number of users as long as its expiry date is not passed.",
+	"expire_in_label": "Expire in",
+	"never": "Never",
+	"x_minutes": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} minute",
+				"countPlural=other": "{count} minutes"
+			}
+		}
+	],
+	"x_hours": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} hour",
+				"countPlural=other": "{count} hours"
+			}
+		}
+	],
+	"x_days": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} day",
+				"countPlural=other": "{count} days"
+			}
+		}
+	],
+	"x_months": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} month",
+				"countPlural=other": "{count} months"
+			}
+		}
+	],
+	"x_years": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} year",
+				"countPlural=other": "{count} years"
+			}
+		}
+	],
+	"generate_invite_link_label": "Generate invite link"
 }

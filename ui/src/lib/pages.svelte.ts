@@ -5,6 +5,7 @@ import UsersIcon from '@lucide/svelte/icons/users';
 import RocketIcon from '@lucide/svelte/icons/rocket';
 import CircleUserRoundIcon from '@lucide/svelte/icons/circle-user-round';
 import LogOutIcon from '@lucide/svelte/icons/log-out';
+import LinkIcon from '@lucide/svelte/icons/link';
 import { m } from '$lib/paraglide/messages.js';
 
 export type Page = {
@@ -26,10 +27,16 @@ const _pages = {
 		url: '/getting-started',
 		icon: RocketIcon,
 	},
+	'myLink': {
+		title: m.pages_my_link(),
+		url: `/my-link`,
+		icon: LinkIcon,
+	},
 	'manageAccess': {
 		title: m.pages_manage_access(),
-		url: '/manage-access',
+		url: '/my-link#manage-access',
 		icon: UsersIcon,
+		isVisible: false,
 	},
 	'account': {
 		title: m.pages_account(),
@@ -53,7 +60,7 @@ export function pages(url?: URL): Record<PageName, Page> {
 				key, {
 					...value,
 					isActive: value.url === '/' ? pageUrl.pathname === '/'
-						: pageUrl.pathname.startsWith(value.url)
+						: pageUrl.pathname.startsWith(value.url.split('#')[0])
 				}
 			];
 		})

@@ -133,8 +133,9 @@
 
 	/* Typography */
 	h1 { @apply scroll-m-20 text-balance text-4xl font-extrabold tracking-tight; }
-	h2 { @apply mt-10 scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0; }
-	h3 { @apply mt-8 scroll-m-20 text-2xl font-semibold tracking-tight; }
+	h2 { @apply scroll-m-20 mt-10 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0; }
+	h3 { @apply scroll-m-20 mt-8 text-2xl font-semibold tracking-tight; }
+	h4 { @apply scroll-m-20 text-xl font-semibold tracking-tight; }
 	p { @apply leading-7 [&:not(:first-child)]:mt-6; }
 }
 

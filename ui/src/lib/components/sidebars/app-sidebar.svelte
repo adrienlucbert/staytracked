@@ -7,6 +7,7 @@
 	const mainMenuItems: MenuItem[] = $derived([
 		pages().home,
 		pages().gettingStarted,
+		pages().myLink,
 		pages().manageAccess,
 		pages().account
 	]);

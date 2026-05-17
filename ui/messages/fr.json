@@ -6,49 +6,58 @@
 	"pages_getting_started": "Premiers pas",
 	"pages_manage_access": "Gérer les accès",
 	"pages_account": "Mon compte",
+	"pages_my_link": "Mon suivi",
 	"pages_signout": "Se déconnecter",
 	"home_page_one": "Un lien",
 	"home_page_tracking_link": "unique",
 	"home_page_share_notify_ride": "Partage, Notifie, Roule",
 	"home_page_worry_free": "Sans Tracas",
-	"home_page_subtitle": "Transforme ton lien Garmin Live-Track <b>éphémère</b> en une URL <b>persistante</b> avec <b>mise à jour automatique</b> et notifications de début d'activity pour votre <b>famille et vos amis</b>.",
+	"home_page_subtitle": "Transforme ton lien de suivi <b>éphémère</b> en une URL <b>persistante</b> avec <b>mise à jour automatique</b> et notifications de début d'activité pour ta <b>famille et tes amis</b>.",
 	"hiw_create_your_link_title": "Crée ton lien",
 	"hiw_create_your_link_text": "Une fois que tu as créé ton lien de suivi persistant, on te fournit un contact dédié à enregistrer sur ton téléphone — il contient une adresse email qui pointe sur notre service.",
-	"hiw_set_in_garmin_app_title": "Configure l'app Garmin Connect™",
-	"hiw_set_in_garmin_app_text": "Dans <a href=\"https://www.garmin.com/en-US/p/125677/\">l'app Garmin Connect™</a>, tu ajoutes notre contact comme destinataire pour test sessions LiveTrack. Comme ça, à chaque fois que tu démarres une session LiveTrack, Garmin nous envoie l'email de suivi à nous.",
+	"hiw_set_in_device_app_title": "Configure l'app de ton appareil",
+	"hiw_set_in_device_app_text": "Dans l'app de ton appareil (Garmin Connect™ ou l'app Coros), tu ajoutes notre contact comme destinataire pour tes sessions de suivi. Comme ça, à chaque fois que tu démarres le suivi, ton appareil nous envoie l'email de suivi.",
 	"hiw_we_handle_the_link_title": "On s'occupe du lien pour toi",
-	"hiw_we_handle_the_link_text": "À chaque fois que tu démarres une session LiveTrack, Garmin nous envoie le lien, notre service l'enregistre et met à jour ton lien persistant, pour s'assurer qu'il affiche toujours la session LiveTrack la plus à jour.",
+	"hiw_we_handle_the_link_text": "À chaque fois que tu démarres une session de suivi, ton appareil nous envoie le lien, notre service l'enregistre et met à jour ton lien persistant, pour s'assurer qu'il affiche toujours la session la plus récente.",
 	"hiw_share_once_done_forever_title": "Partage une fois, c'est tout",
-	"hiw_share_once_done_forever_text": "Au lieu d'envoyer ton lien à tes amis à chaque sortie, partage juste ton lien persistant une fois. Ils peuvent l'enregistrer — il pointera toujours vers ta session LiveTrack la plus récente.",
+	"hiw_share_once_done_forever_text": "Au lieu d'envoyer ton lien à tes amis à chaque sortie, partage juste ton lien persistant une fois. Ils peuvent l'enregistrer — il pointera toujours vers ta session de suivi la plus récente.",
 	"hiw_lets_get_started": "C'est parti!",
-	"gs_follow_those_steps": "Suis ces étapes pour configurer ton lien LiveTrack persistant avec ton appareil Garmin.",
-	"gs_create_a_livetrack_recipient_title": "Crée un destinataire pour ton LiveTrack",
-	"gs_create_a_livetrack_recipient_text": "Pour que Garmin nous notifie quand tu démarres une session LiveTrack, on a besoin que tu nous ajoutes en tant que destinataire pour tes sessions LiveTrack.",
+	"gs_follow_those_steps": "Suis ces étapes pour configurer ton lien de suivi persistant.",
+	"gs_create_a_tracking_recipient_title": "Crée un destinataire pour ton suivi",
+	"gs_create_a_tracking_recipient_text": "Pour que ton appareil nous notifie quand tu démarres une session de suivi, on a besoin que tu nous ajoutes en tant que destinataire pour tes emails de suivi.",
 	"gs_download_vcard": "Télécharger la vCard",
 	"gs_scan_or_download_contact": "D'abord, scanne ou télécharge cette carte de contact qui contient une adresse email dédiée.",
-	"gs_set_it_in_garmin_connect_title": "Configure Garmin Connect™",
-	"gs_set_it_in_garmin_connect_text": "Dans <a href=\"https://www.garmin.com/en-US/p/125677/\">l'app Garmin Connect™</a>, ajoute notre contact comme destinataire pour test sessions LiveTrack. Comme ça, à chaque fois que tu démarres une session LiveTrack, Garmin nous envoie l'email de suivi à nous.",
+	"gs_set_it_in_your_app_title": "Configure l'app de ton appareil",
+	"gs_set_it_in_your_app_text": "Sélectionne ton appareil ci-dessous et suis les instructions pour ajouter notre contact comme destinataire de tes sessions de suivi.",
+	"gs_set_it_in_garmin_connect_text": "Dans <a href=\"https://www.garmin.com/en-US/p/125677/\">l'app Garmin Connect™</a>, ajoute notre contact comme destinataire pour tes sessions LiveTrack. Comme ça, à chaque fois que tu démarres une session LiveTrack, Garmin nous envoie l'email de suivi.",
 	"gs_heres_a_video": "Voici une vidéo qui te montre comment faire:",
 	"gs_turn_on_auto_start_title": "Activer le démarrage automatique",
 	"gs_turn_on_auto_start_text": "<p>Il est recommandé d'activer le Démarrage automatique dans le menu LiveTrack de l'app Garmin Connect™. De cette manière, ton lien de suivi est automatiquement mis à jour, sans que tu n'aies besoin de démarrer la session LiveTrack manuellement.</p><p>Attention, tant qu'une session LiveTrack est en cours, cela consomme plus de batterie sur ton téléphone et sur ton appareil Garmin.</p>",
+	"gs_set_it_in_coros_app_text": "Dans <a href=\"https://coros.com/getapp\">l'app Coros</a>, ouvre <b>Profil</b> → <b>Alerte de sécurité</b>, clique sur <b>Ajouter un contact d'urgence</b>. Tu peux cliquer sur l'icône de Contact dans le champs Nom pour sélectionner le destinataire nouvellement créé, ou tu peux le renseigner manuellement.",
+	"gs_email_field_empty_title": "Le champ Email ne se remplit pas automatiquement",
+	"gs_email_field_empty_text": "Si le champ Email ne se remplit pas automatiquement quand tu sélectionnes le contact, tu peux trouver l'adresse email dédiée dans les détails du contact. Tu peux aussi la copier ci-dessous :",
+	"gs_enable_safety_alerts": "Une fois le contact d'urgence ajouté, active les <b>Alertes de sécurité</b> pour terminer la configuration. Avec ça, à chaque fois que tu démarres le suivi, Coros nous envoie l'email de suivi.",
 	"gs_try_it_out_title": "À toi de jouer!",
 	"link_setup_youre_all_set": "Tout est prêt!",
 	"link_setup_we_received_notice": "On a reçu les infos sur ton activité, tout est prêt!",
 	"link_setup_preview_your_latest_activity": "Tu peux voir un aperçu de ta dernière activité dans l'onglet ",
 	"link_setup_tab": ".",
 	"link_setup_waiting_for_activity": "On attend que tu démarres une activité",
-	"link_setup_start_new_activity": "Démarre une nouvelle activité sur ton appareil Garmin et lance une session LiveTrack depuis l'app Garmin Connect™ pour vérifier que tout est bien configuré.",
+	"link_setup_start_new_activity": "Démarre une nouvelle activité sur ton appareil et lance une session de suivi depuis ton app pour vérifier que tout est bien configuré.",
 	"copy_link": "Copier le lien",
 	"link_copied": "Le lien a été copié dans le presse-papier.",
+	"copy_email": "Copier l'adresse email",
+	"email_copied": "L'adresse email a été copiée dans le presse-papier.",
 	"an_error_occurred": "Une erreur est survenue",
 	"unexpected_server_error": "Erreur serveur {code} inattendue",
+	"ml_section_preview_title": "Prévisualiser",
 	"ma_general_access": "Accès général",
 	"ma_restricted": "Limité",
-	"ma_restricted_description": "Seules les personnes avec un accès explicite peuvent ouvrir votre LiveTrack.",
+	"ma_restricted_description": "Seules les personnes avec un accès explicite peuvent ouvrir ton lien de suivi.",
 	"ma_anyone_with_the_link": "Toute personne ayant le lien",
-	"ma_anyone_with_the_link_description": "Toute personne ayant le lien peut ouvrir votre LiveTrack.",
+	"ma_anyone_with_the_link_description": "Toute personne ayant le lien peut accéder à ta session de suivi.",
 	"ma_people_with_access_title": "Personnes avec accès",
-	"ma_people_with_access_text": "Liste des utilisateurs avec un accès explicite à votre LiveTrack. Si l'accès à votre lien est <i>limité</i>, seuls ces utilisateurs pourront accéder à votre LiveTrack.",
+	"ma_people_with_access_text": "Liste des utilisateurs avec un accès explicite à ton lien de suivi. Si l'accès à ton lien est <i>limité</i>, seuls ces utilisateurs pourront y accéder.",
 	"followers_issue_loading": "Il y a eu un problème lors du chargement des abonnés.",
 	"followers_user_header": "Utilisateur",
 	"followers_notifications_header": "Notifications",
@@ -65,14 +74,14 @@
 	"followers_permanently": "{action} l'accès définitivement",
 	"are_you_sure": "Es-tu sûr?",
 	"ma_visits_history": "Historique des visites",
-	"no_livetrack_link_setup_yet": "Tu n'as pas encore configuré ton lien de LiveTrack.",
+	"no_livetrack_link_setup_yet": "Tu n'as pas encore configuré ton lien de suivi.",
 	"visits_detail_per_user": "Détails par utilisateur",
 	"visits_issue_loading": "Il y a eu un problème lors du chargement des visites.",
 	"visits_label": "Visites",
 	"visitor": "Visiteur",
 	"following_title": "Abonnements",
-	"following_text": "Liste des utilisateurs auxquels vous êtes abonné ou avez envoyé une demande d'abonnement. Si leur lien est en accès <i>limité</i>, votre demande d'abonnement devra être approuvée pour pouvoir accéder à leur lien de LiveTrack.",
-	"following_issue_loading": "Il y a eu un problème lors du chargement de vos abonnements.",
+	"following_text": "Liste des utilisateurs auxquels tu es abonné ou as envoyé une demande. Si leur lien est en accès <i>limité</i>, ta demande devra être approuvée pour accéder à leur lien de suivi.",
+	"following_issue_loading": "Il y a eu un problème lors du chargement de tes abonnements.",
 	"following_user_header": "Utilisateur",
 	"following_notifications_header": "Notifications",
 	"following_tracking_link_header": "Lien de suivi",
@@ -84,8 +93,8 @@
 	"toggle_notifications_tooltip": "Recevoir des notifications quand cet utilisateur démarre une nouvelle activité.",
 	"notifications_title": "Notifications",
 	"notifications_text": "Vous pouvez choisir de recevoir les notifications par email, par notifications push sur votre navigateur ou aucune notification. Les notifications sur votre navigateur sont spécifiques à chaque appareil. Si vous souhaitez les recevoir à la fois sur votre ordinateur et votre téléphone, assurez-vous de les activer sur les deux appareils via cette page.",
-	"notifications_follow_request_title": "Lorsque quelqu'un demande à vous suivre",
-	"notifications_new_activity_title": "Lorsque quelqu'un que vous suivez démarre une nouvelle session LiveTrack",
+	"notifications_follow_request_title": "Lorsque quelqu'un demande à te suivre",
+	"notifications_new_activity_title": "Lorsque quelqu'un que tu suis démarre une nouvelle session de suivi",
 	"notifications_email_label": "Activer/Désactiver les notifications par email",
 	"notifications_webpush_label": "Activer/Désactiver les notifications push",
 	"request_access": "Demander l'accès",
@@ -96,13 +105,11 @@
 	"cancel": "Annuler",
 	"enable": "Activer",
 	"disable": "Désactiver",
-	"deny": "Refuser",
-	"approve": "Approuver",
 	"verify_email_title": "Vérifiez votre adresse email",
-	"verify_email_text": "Nous avons renvoyé un email à {email} pour vérifier votre adresse email et activer votre compte.<br />Vérifier votre adresse email vous permettra d'activer les notifications et de réinitialiser votre mot de passe si vous le perdez.",
+	"verify_email_text": "Nous avons envoyé un email à {email} pour vérifier votre adresse email et activer votre compte.<br />Vérifier votre adresse email vous permettra d'activer les notifications et de réinitialiser votre mot de passe si vous le perdez.",
 	"resend_email": "Renvoyer l'email",
 	"enable_notifications_title": "Activer les notifications sur cet appareil",
-	"enable_notifications_text": "Les notifications push sur ce navigateur ne sont pas encore activées. Vous ne pouvez recevoir des notifications push sur cet appareil que si vous activez les notifications.",
+	"enable_notifications_text": "Les notifications push sur ce navigateur ne sont pas encore activées. Vous ne pouvez recevoir des notifications push sur cet appareil que si vous les activez.",
 	"enable_notifications_button": "Activer les notifications",
 	"notifications_not_supported_title": "Les notifications push ne sont pas supportées par votre navigateur.",
 	"notifications_not_supported_body": "Malheureusement il n'y a rien que vous puissiez faire à part activer les emails comme alternative aux notifications.",
@@ -116,7 +123,7 @@
 	"missing_header": "En-tête '{header}' manquante.",
 	"invalid_header": "En-tête '{header}' invalide.",
 	"failed_to_update_visibility": "Échec lors de la mise à jour de la visibilité",
-	"failed_to_set_preferred_locale": "Échec lors de la mise à jour de la langue préféré de l'utilisateur",
+	"failed_to_set_preferred_locale": "Échec lors de la mise à jour de la langue préférée",
 	"failed_to_list_visits": "Échec lors du listage des visites",
 	"failed_to_list_followers_stats": "Échec lors du listage des statistiques d'abonnés",
 	"failed_to_toggle_notifications": "Échec pour {action} les notifications",
@@ -127,7 +134,7 @@
 	"invalid_athlete_identifier": "L'identifiant d'athlète n'est pas valide.",
 	"tracking_link_does_not_exist": "Ce lien de suivi n'existe pas.",
 	"tracking_link_is_not_public": "Ce lien de suivi n'est pas public.",
-	"livetrack_session_not_started": "Cette session LiveTrack n'a pas encore commencé.",
+	"livetrack_session_not_started": "Cette session de suivi n'a pas encore commencé.",
 	"access_request_pending_approval": "Votre demande d'accès est en attente d'approbation.",
 	"invalid_email_address": "Adresse email invalide",
 	"invalid_password": "Mot de passe invalide (min 8 caractères)",
@@ -140,7 +147,7 @@
 	"invalid_action_token": "Le token ne permet pas cette action",
 	"invalid_oauth_provider": "Fournisseur OAuth invalide: {provider}",
 	"invalid_user_uuid": "UUID d'utilisateur invalide",
-	"invalid_livetrack_session": "La session LiveTrack est invalide",
+	"invalid_livetrack_session": "La session de suivi est invalide",
 	"missing_cookie": "Cookie '{name}' manquant",
 	"oauth_state_invalid_or_expired": "La session d'OAuth est invalide ou a expiré",
 	"authentication": "Authentification",
@@ -190,18 +197,18 @@
 	"mail_reset_password_button": "Réinitialiser le mot de passe",
 	"mail_reset_password_link_expires": "Ce lien expirera dans {expiresIn}.",
 	"mail_reset_password_click_get_new_one": "Cliquer ici pour en recevoir un nouveau",
-	"mail_reset_password_p3": "Vous recevez cet email car une réinitialisation de mot de passe à été demandée pour votre compte.",
+	"mail_reset_password_p3": "Vous recevez cet email car une réinitialisation de mot de passe a été demandée pour votre compte.",
 	"mail_verify_email_subject": "Vérifiez votre adresse email",
 	"mail_verify_email_title": "Vérifiez votre adresse email",
 	"mail_verify_email_p1": "Pour activer votre compte, nous avons besoin de vérifier votre adresse email:",
 	"mail_verify_email_button": "Vérifier l'adresse email",
 	"mail_verify_email_p2": "Cela vous permettra de recevoir les notifications et réinitialisations de mot de passe de la part de {appName}.",
-	"mail_verify_email_p3": "Vous recevez cet email car you avez récemment créé un compte sur ",
+	"mail_verify_email_p3": "Vous recevez cet email car vous avez récemment créé un compte sur ",
 	"mail_verify_email_p4": "Si ce n'était pas vous, merci d'ignorer cet email.",
 	"mail_new_follow_request_subject": "{username} veut te suivre",
 	"mail_new_follow_request_title": "{username} a demandé à vous suivre sur {appName}.",
-	"mail_new_follow_request_p1": "Approuver cette demande leur permettra d'accéder à votre LiveTrack et de recevoir des notifications lorsque vous démarrez une activité.",
-	"mail_new_follow_request_p2": "Vous pouvez gérer les accès à votre lien et voir vos demandes de suivi dans votre onglet {tab} :",
+	"mail_new_follow_request_p1": "Approuver cette demande leur permettra d'accéder à votre lien de suivi et de recevoir des notifications lorsque vous démarrez une activité.",
+	"mail_new_follow_request_p2": "Vous pouvez gérer les accès à votre lien et voir vos demandes dans votre onglet {tab} :",
 	"mail_new_activity_subject": "{username} a démarré une nouvelle activité",
 	"mail_new_activity_title": "{username} a démarré une nouvelle activité",
 	"mail_new_activity_button": "Suivre son trajet",
@@ -238,13 +245,111 @@
 	"install_android_edge_1": "Appuyez sur le menu dans le coin en bas à droite",
 	"install_android_edge_2": "Faites défiler les options et appuyez sur Ajouter au téléphone",
 	"install_button": "Installer",
-	"webpush_install_warning": "Les notifications push sur cet appareil sont uniquement autorisées sur les applications web installées. Pour recevoir des notifcations push sur cet appareil, vous devez installer cette application web (l'ajouter à votre écran d'accueil).<br />Vous pouvez aussi ignorer ce message et utiliser les notifications email à la place.",
-	"webpush_pwa_warning": "Les notifications sur votre navigateur fonctionnent tant que votre navigateur est ouvert, même en tâche de fond. Si vous le fermez, vous recevrez les notifications lors de sa prochaine ouverture.<br />Si vous voulez recevoir les notifications même quand votre navigateur est fermé, vous pouvez ajouter ce site à votre écran d'accueil (installer en tant qu'application web).",
+	"webpush_install_warning": "Les notifications push sur cet appareil sont uniquement disponibles sur les applications web installées. Pour les recevoir, vous devez installer cette application web (l'ajouter à votre écran d'accueil).<br />Vous pouvez aussi ignorer ce message et utiliser les notifications email à la place.",
+	"webpush_pwa_warning": "Les notifications push fonctionnent tant que votre navigateur est ouvert, même en tâche de fond. Si vous le fermez, vous recevrez les notifications en attente lors de sa prochaine ouverture.<br />Si vous voulez recevoir les notifications même quand votre navigateur est fermé, vous pouvez ajouter ce site à votre écran d'accueil (installer en tant qu'application web).",
 	"username_slug_already_taken": "Ce nom d'utilisateur est déjà pris.",
 	"invalid_username_slug": "Nom d'utilisateur invalide. Suggestion: \"{slug}\"",
 	"app_footer_explore": "Explorer",
 	"app_footer_notice": "Avertissement",
-	"app_footer_notice_text": "Ce service n'est en aucun cas lié à <a class=\"link\" href=\"https://www.garmin.com/\">Garmin&reg;</a> mais se contente d'augmenter et de simplifier sa fonctionnalité de LiveTrack.",
+	"app_footer_notice_text": "Ce service n'est en aucun cas lié à <a class=\"link\" href=\"https://www.garmin.com/\">Garmin&reg;</a> ou à <a class=\"link\" href=\"https://www.coros.com/\">COROS&reg;</a> mais se contente d'augmenter et de simplifier leurs fonctionnalités de suivi.",
 	"app_footer_how_it_works": "Comment ça marche",
-	"app_footer_self_host": "Self-Host"
+	"app_footer_self_host": "Self-Host",
+	"gs_section_follow_someone_title": "Suivre quelqu'un",
+	"gs_section_share_tracking_title": "Partager mon suivi",
+	"gs_section_setup_tracking_title": "Configurer mon lien de suivi",
+	"gs_follow_someone_intro": "Suis des personnes pour accéder à leur lien de suivi à tout moment et recevoir des notifications par email ou push quant ils démarrent une nouvelle activité. S'ils ont rendu leur suivi privé, tu ne pourras y accéder qu'une fois qu'ils auront accepté ta demande d'accès.",
+	"gs_follow_someone_via_link_title": "Visiter son lien de suivi",
+	"gs_follow_someone_via_link_text": "Si tu as déjà le lien de suivi de quelqu'un, ouvre-le dans ton navigateur. Tu peux lui envoyer une demande de suivi via le bouton <b>S'abonner</b>. Une fois qu'il l'a approuvée (ou si son lien est public), tu as accès.",
+	"gs_follow_someone_via_invite_title": "Être invité directement",
+	"gs_follow_someone_via_invite_text": "La personne que tu veux suivre peut t'inviter directement depuis sa page Gérer les accès. Elle obtiendra un lien à te donner qui t'ajoute directement à ses abonnés.",
+	"gs_share_tracking_intro": "Partage ton suivi pour que d'autres puissent suivre tes activités en direct et recevoir des notifications par email ou push quand tu démarres une activité.",
+	"gs_invite_public_link_title": "Partager ton lien publiquement",
+	"gs_invite_public_link_text": "Par défaut, ton lien de suivi est public. Cela signifie que toute personne qui l'a peut voir ton activité en cours. Partage simplement l'URL ci-dessous avec qui tu veux. Tu peux rendre ton lien privé depuis la page Gérer les accès.",
+	"gs_invite_private_link_title": "Rester privé avec un accès explicite",
+	"gs_invite_private_link_text": "Si ton lien est en accès <b>limité</b>, seuls les abonnés approuvés peuvent le consulter. Tu peux inviter des personnes directement ou approuver les demandes depuis la page Gérer les accès.",
+	"invite_people_title": "Inviter quelqu'un",
+	"invite_people_text": "Invitez quelqu'un à vous suivre en leur donnant un lien.",
+	"uses_label": "Utilisations",
+	"single_use_label": "Unique",
+	"single_use_description": "Le lien expirera après avoir été utilisé par une personne.",
+	"multi_use_label": "Multiples",
+	"multi_use_description": "Le lien peut être utilisé par un nombre illimité de personnes tant que sa date d'expiration n'est pas dépassée.",
+	"expire_in_label": "Expirer dans",
+	"never": "Jamais",
+	"x_minutes": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} minute",
+				"countPlural=other": "{count} minutes"
+			}
+		}
+	],
+	"x_hours": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} heure",
+				"countPlural=other": "{count} heures"
+			}
+		}
+	],
+	"x_days": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} jour",
+				"countPlural=other": "{count} jours"
+			}
+		}
+	],
+	"x_months": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} mois",
+				"countPlural=other": "{count} mois"
+			}
+		}
+	],
+	"x_years": [
+		{
+			"declarations": [
+				"input count",
+				"local countPlural = count: plural"
+			],
+			"selectors": [
+				"countPlural"
+			],
+			"match": {
+				"countPlural=one": "{count} an",
+				"countPlural=other": "{count} ans"
+			}
+		}
+	],
+	"generate_invite_link_label": "Générer le lien d'invitation"
 }

@@ -4,3 +4,22 @@ services:
       - 3000:3000
     environment:
       PUBLIC_URL: http://localhost:3000
+
+  db-studio:
+    build:
+      context: ui
+      dockerfile: Dockerfile.dev
+    env_file:
+      - ./ui/.env.dev
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+    volumes:
+      - ./ui:/app
+      - /app/node_modules
+    ports:
+      - 4983:4983
+    depends_on:
+      - migrate
+    networks:
+      - garmin-persistent-livetrack-network
+    command: ["yarn", "db:studio", "--host", "0.0.0.0"]

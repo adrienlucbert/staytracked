@@ -102,7 +102,7 @@
 							</h4>
 							<p>{m.gs_set_it_in_your_app_text()}</p>
 
-							<Tabs.Root class="mt-4">
+							<Tabs.Root value="garmin" class="mt-4">
 								<Tabs.List class="min-h-12 w-full rounded-b-none">
 									<Tabs.Trigger value="garmin" class="rounded-r-none rounded-b-none">
 										<svg

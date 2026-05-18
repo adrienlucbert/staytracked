@@ -35,7 +35,7 @@
 
 <svelte:head>
 	<title>{page.data.seo ? page.data.seo.title : data.appName}</title>
-	<meta name="description" content={page.data.seo?.description || 'Garmin Persistent Livetrack'} />
+	<meta name="description" content={page.data.seo?.description || 'StayTracked'} />
 </svelte:head>
 
 <Toaster />

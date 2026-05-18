@@ -14,7 +14,7 @@ services:
     depends_on:
       - ui
     networks:
-      - garmin-persistent-livetrack-network
+      - staytracked-network
 
   postgres:
     container_name: postgres
@@ -30,7 +30,7 @@ services:
     env_file:
       - ./.env
     networks:
-      - garmin-persistent-livetrack-network
+      - staytracked-network
 
   migrate:
     build:
@@ -41,7 +41,7 @@ services:
       postgres:
         condition: service_healthy
     networks:
-      - garmin-persistent-livetrack-network
+      - staytracked-network
     command: ["yarn", "db:migrate"]
 
   ui:
@@ -56,10 +56,10 @@ services:
     depends_on:
       - migrate
     networks:
-      - garmin-persistent-livetrack-network
+      - staytracked-network
 
 networks:
-  garmin-persistent-livetrack-network:
+  staytracked-network:
 
 volumes:
   postgres-data:

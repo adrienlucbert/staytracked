@@ -21,5 +21,5 @@ services:
     depends_on:
       - migrate
     networks:
-      - garmin-persistent-livetrack-network
+      - staytracked-network
     command: ["yarn", "db:studio", "--host", "0.0.0.0"]

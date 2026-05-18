@@ -6,7 +6,7 @@ services:
       - "1080:1080" # UI
     restart: unless-stopped
     networks:
-      - garmin-persistent-livetrack-network
+      - staytracked-network
 
   postgres:
     ports:

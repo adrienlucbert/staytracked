@@ -1,14 +1,14 @@
-# Garmin Persistent LiveTrack
+# StayTracked
 
-Self-hostable Garmin LiveTrack session persister with built-in access management and notifications.
+Self-hostable Garmin LiveTrack & Coros Safety Alerts session persister with built-in access management and notifications.
 
-This project allows you to capture and persist Garmin LiveTrack sessions (live GPS data shared from your Garmin device) and optionally send notifications (e.g., via email or browser push notifications) your followers when you start a new session.
+This project allows you to capture and persist Garmin LiveTrack and Coros Safety Alerts sessions (live GPS data shared from your Garmin or Coros device) and optionally send notifications (e.g., via email or browser push notifications) your followers when you start a new session.
 
 See [how it works!](https://staytracked.app/#how-it-works)
 
-> This service is in no way related to Garmin® but extends and simplifies the use of its LiveTrack feature.
+> This service is in no way related to Garmin® or Coros but extends and simplifies the use of their tracking feature.
 
-![website landing page](https://github.com/user-attachments/assets/7fbd7db7-dd83-4670-995c-b2a3dcccb19b)
+![website landing page](https://github.com/user-attachments/assets/0e67c613-d146-48d6-a590-7676430554da)
 
 ## Table of Contents
 
@@ -30,9 +30,9 @@ This project is designed with open-source and self-hosting in mind, it's meant t
 
 ## Features
 
-- Captures Garmin LiveTrack start events (by registering the app as a LiveTrack email recipient in the Garmin Connect™ app)
-- Persists LiveTrack sessions into a customizable but persistent URL
-- Manage access to your LiveTrack sessions:
+- Captures Garmin LiveTrack or Coros Safety Alerts start events (by registering the app as an email recipient in the Garmin Connect™ or Coros app)
+- Persists tracking sessions into a customizable but persistent URL
+- Manage access to your tracking link:
   - Public: Anyone with the link can access the session
   - Restricted: Only people explicitly invited or allowed can access the session
 - Followers can choose to get notified when you start a session
@@ -46,7 +46,7 @@ This project is designed with open-source and self-hosting in mind, it's meant t
 
 This project uses docker-compose to run its different parts:
 
-- [smtp-proxy](/smtp-proxy): a [Salmon SMTP server](https://salmon-mail.readthedocs.io/en/latest/) used to capture Garmin-sent LiveTrack session start emails and extract the session link in them
+- [smtp-proxy](/smtp-proxy): a [Salmon SMTP server](https://salmon-mail.readthedocs.io/en/latest/) used to capture Garmin/Coros-sent tracking session start emails and extract the session link in them
 - postgres: the database used to run this app
 - [ui](/ui): the web UI and API
 
@@ -61,8 +61,8 @@ It also comes with a [justfile](https://github.com/casey/just) that you can use 
 To begin, clone the repository:
 
 ```bash
-git clone https://github.com/adrienlucbert/garmin-persistent-livetrack.git
-cd garmin-persistent-livetrack
+git clone https://github.com/adrienlucbert/staytracked.git
+cd staytracked
 ```
 
 ### Run in production
@@ -73,7 +73,7 @@ Refer to [Environment variables](#environment-variables) for details.
 
 #### Expose via Traefik (recommended)
 
-[Traefik](https://traefik.io/traefik) is an open-source reverse proxy that you can use for free to expose your apps. `quickstart-traefik.yml` provides a very basic configuration to expose the app through [http://garmin-persistent-livetrack.localhost](http://garmin-persistent-livetrack.localhost).
+[Traefik](https://traefik.io/traefik) is an open-source reverse proxy that you can use for free to expose your apps. `quickstart-traefik.yml` provides a very basic configuration to expose the app through [http://staytracked.localhost](http://staytracked.localhost).
 
 ```sh
 just run
@@ -123,7 +123,7 @@ Here is the list of environment variables you can use to configure the app:
 
 #### Root configuration (`./.env.example`)
 
-- **`POSTGRES_DB`** *(default: `garmin_persistent_livetrack`):* name of the postgres database to create and use
+- **`POSTGRES_DB`** *(default: `staytracked`):* name of the postgres database to create and use
 - **`POSTGRES_USER`** *(default: `postgres`):* name of the postgres user to use
 - **`POSTGRES_PASSWORD`** *(default: `postgres`)*: password for the postgres user
 - **`SMTP_PROXY_BASIC_AUTH`**: Basic Auth user and password to use between the SMTP proxy and the ui API.
@@ -134,7 +134,7 @@ Here is the list of environment variables you can use to configure the app:
 
 **General configuration**:
 
-- **`APP_NAME`** *(default: `Garmin Persistent Livetrack`)*: name of the app you want to display in the UI and in the emails
+- **`APP_NAME`** *(default: `StayTracked`)*: name of the app you want to display in the UI and in the emails
 - **`PUBLIC_URL`** *(default: <http://localhost:3000>)*: URL that can be used to access your app publicly
 - **`ORIGIN`** *(default: equals to `PUBLIC_URL`)*: this must match `PUBLIC_URL`. It is used by [SvelteKit's Node adapter](https://svelte.dev/docs/kit/adapter-node) for CORS
 - **`JWT_TOKEN_SECRET`**: a passphrase used to encode JWT. It can be anything, as long as it remains secret
@@ -162,9 +162,9 @@ Here is the list of environment variables you can use to configure the app:
 
 ## Contributing
 
-Contributions are welcome! Feel free to use the [Issues](https://github.com/adrienlucbert/garmin-persistent-livetrack/issues) section to report issues or bugs and suggest enhancements.
+Contributions are welcome! Feel free to use the [Issues](https://github.com/adrienlucbert/staytracked/issues) section to report issues or bugs and suggest enhancements.
 
-If you have the possibility, don't hesitate to submit [pull requests](https://github.com/adrienlucbert/garmin-persistent-livetrack/pulls) to help with the development. If your development concerns a new feature, consider submitting your idea via an issue for discussing it with me before spending time developing it. Or fork the project and make it your own!
+If you have the possibility, don't hesitate to submit [pull requests](https://github.com/adrienlucbert/staytracked/pulls) to help with the development. If your development concerns a new feature, consider submitting your idea via an issue for discussing it with me before spending time developing it. Or fork the project and make it your own!
 
 ## License
 

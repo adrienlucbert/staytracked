@@ -12,14 +12,14 @@
 		</a>
 		<a
 			class="mb-1 underline-offset-4 hover:underline"
-			href="https://github.com/adrienlucbert/garmin-persistent-livetrack#self-hosting"
+			href="https://github.com/adrienlucbert/staytracked#self-hosting"
 			target="_blank"
 		>
 			{m.app_footer_self_host()}
 		</a>
 		<a
 			class="mb-1 underline-offset-4 hover:underline"
-			href="https://github.com/adrienlucbert/garmin-persistent-livetrack/"
+			href="https://github.com/adrienlucbert/staytracked/"
 			target="_blank"
 		>
 			Github

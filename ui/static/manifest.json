@@ -1,8 +1,8 @@
 {
-	"name": "Garmin Persistent LiveTrack",
+	"name": "StayTracked",
 	"short_name": "LiveTrack",
-	"description": "Get notified when your friends and family start an activity and follow their journey.\n\nTransform your ever-changing Garmin Live-Tracking link into a persistent URL and ensure continuous updates with built-in activity start notifications for your friends and family.",
-	"id": "garmin-persistent-livetrack",
+	"description": "Get notified when your friends and family start an activity and follow their journey.\n\nTransform your ever-changing safety tracking link into a persistent URL and ensure continuous updates with built-in activity start notifications for your friends and family.",
+	"id": "staytracked",
 	"start_url": "/",
 	"display": "standalone",
 	"icons": [

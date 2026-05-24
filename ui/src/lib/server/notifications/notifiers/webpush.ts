@@ -6,9 +6,10 @@ import { m } from "$lib/paraglide/messages";
 import { getLocale, isLocale } from "$lib/paraglide/runtime";
 import { env } from '$env/dynamic/public';
 import { getAthleteLink } from "$lib/link";
+import { Notification } from "$lib/types/notifications";
 
 export const WebPushNotifier = {
-	async follow_request(target: Users, follower: Users): Promise<void> {
+	[Notification.FOLLOW_REQUEST]: async (target: Users, follower: Users): Promise<void> => {
 		const locale = isLocale(target.preferredLocale) ? target.preferredLocale : getLocale()
 		notifyUser(target.uuid as UUID, {
 			title: m.notif_new_follow_request_title({ username: follower.name }, { locale }),
@@ -21,7 +22,7 @@ export const WebPushNotifier = {
 		})
 	},
 
-	async new_livetrack(target: Users, athlete: Users): Promise<void> {
+	[Notification.NEW_LIVETRACK]: async (target: Users, athlete: Users): Promise<void> => {
 		const locale = isLocale(target.preferredLocale) ? target.preferredLocale : getLocale()
 		notifyUser(target.uuid as UUID, {
 			title: m.notif_new_activity_title({ username: athlete.name }, { locale }),
@@ -31,5 +32,17 @@ export const WebPushNotifier = {
 				open: getAthleteLink(athlete.name).toString()
 			}
 		})
-	}
+	},
+
+	[Notification.SELF_NEW_LIVETRACK]: async (target: Users): Promise<void> => {
+		const locale = isLocale(target.preferredLocale) ? target.preferredLocale : getLocale()
+		notifyUser(target.uuid as UUID, {
+			title: m.notif_self_new_activity_title({}, { locale }),
+			icon: "https://img.icons8.com/color/96/cycling-road--v1.png",
+			badge: "https://img.icons8.com/color/96/cycling-road--v1.png",
+			data: {
+				open: getAthleteLink(target.name).toString()
+			}
+		})
+	},
 } satisfies Notifier

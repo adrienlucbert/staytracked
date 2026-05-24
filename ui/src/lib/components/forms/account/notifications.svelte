@@ -16,6 +16,9 @@
 		},
 		[Notification.NEW_LIVETRACK]: {
 			title: m.notifications_new_activity_title()
+		},
+		[Notification.SELF_NEW_LIVETRACK]: {
+			title: m.notifications_self_new_activity_title()
 		}
 	} as const;
 

@@ -4,10 +4,11 @@ import { getAthleteLink } from '$lib/link';
 import type { Users } from "$lib/server/db/schema";
 import { send } from "$lib/server/email/sender";
 import { NewActivity, NewFollowRequest } from "$lib/server/email/templates";
+import { Notification } from '$lib/types/notifications';
 import type { Notifier } from "./notifier";
 
 export const EmailNotifier = {
-	async follow_request(target: Users, follower: Users): Promise<void> {
+	[Notification.FOLLOW_REQUEST]: async (target: Users, follower: Users): Promise<void> => {
 		if (!target.email) {
 			return
 		}
@@ -21,7 +22,7 @@ export const EmailNotifier = {
 		}, target.email, target.preferredLocale)
 	},
 
-	async new_livetrack(target: Users, athlete: Users): Promise<void> {
+	[Notification.NEW_LIVETRACK]: async (target: Users, athlete: Users): Promise<void> => {
 		if (!target.email) {
 			return
 		}
@@ -31,5 +32,17 @@ export const EmailNotifier = {
 			athleteURL: getAthleteLink(athlete.name).toString(),
 			accountURL: `${env.PUBLIC_URL ?? 'http://localhost'}/account`,
 		}, target.email, target.preferredLocale)
-	}
+	},
+
+	[Notification.SELF_NEW_LIVETRACK]: async (user: Users): Promise<void> => {
+		if (!user.email) {
+			return
+		}
+
+		await send(NewActivity(user.name), {
+			username: user.name,
+			athleteURL: getAthleteLink(user.name).toString(),
+			accountURL: `${env.PUBLIC_URL ?? 'http://localhost'}/account`,
+		}, user.email, user.preferredLocale)
+	},
 } satisfies Notifier

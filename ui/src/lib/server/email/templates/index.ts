@@ -30,3 +30,9 @@ export const NewActivity: ((username: string) => EmailTemplate<typeof NewActivit
 	subject: (locale) => m.mail_new_activity_subject({ username }, { locale }),
 	template: NewActivityTemplate,
 })
+
+import { default as SelfNewActivityTemplate } from "./selfNewActivity.svelte";
+export const SelfNewActivity: (() => EmailTemplate<typeof SelfNewActivityTemplate>) = () => ({
+	subject: (locale) => m.mail_self_new_activity_subject({}, { locale }),
+	template: SelfNewActivityTemplate,
+})

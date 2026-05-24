@@ -36,8 +36,10 @@ export async function PUT({ params, request }: RequestEvent) {
 			if (!user) {
 				throw m.invalid_user_uuid()
 			}
-			const followers = await listFollowers(updatedTrackingLink.userUUID as UUID)
 			const sendJobs: Promise<void>[] = []
+			sendJobs.push(notify(Notification.SELF_NEW_LIVETRACK, user))
+
+			const followers = await listFollowers(updatedTrackingLink.userUUID as UUID)
 
 			for (const follow of followers) {
 				if (follow.status !== FollowStatus.APPROVED || !follow.enabledNotifications) {

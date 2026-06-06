@@ -21,11 +21,16 @@ export const PUT: RequestHandler = async ({ locals, request }) => {
 			.update(users)
 			.set({
 				notificationPreferences: sql`jsonb_set(
-				${users.notificationPreferences}, 
-				${sql.raw(`'{${notification},${channel}}'`)}, 
-				${sql.raw(`'${String(enabled)}'`)},
-				true
-			)`
+            jsonb_set(
+                ${users.notificationPreferences},
+                ${sql.raw(`'{${notification}}'`)},
+                COALESCE(${users.notificationPreferences} -> ${notification}, '{"push": false, "email": false}'),
+                true
+            ),
+            ${sql.raw(`'{${notification},${channel}}'`)},
+            ${sql.raw(`'${String(enabled)}'`)},
+            true
+        )`
 			})
 			.where(eq(users.uuid, locals.user.uuid))
 	} catch (message) {

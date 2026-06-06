@@ -22,7 +22,17 @@
 		}
 	} as const;
 
-	let preferences = $state(user.notificationPreferences);
+	let preferences = $state(
+		Object.fromEntries(
+			Object.values(Notification).map((v) => [
+				v,
+				{
+					email: user.notificationPreferences[v]?.email ?? false,
+					push: user.notificationPreferences[v]?.push ?? false
+				}
+			])
+		)
+	);
 
 	let loading = $state(
 		Object.fromEntries(Object.values(Notification).map((v) => [v, { email: false, push: false }]))

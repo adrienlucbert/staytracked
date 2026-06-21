@@ -199,6 +199,12 @@ export async function setUserPreferredLocale(userUUID: UUID, locale: Locale): Pr
 		.where(eq(users.uuid, userUUID))
 }
 
+export async function setUserIsIncognito(userUUID: UUID, isIncognito: boolean): Promise<void> {
+	await db().update(users)
+		.set({ isIncognito })
+		.where(eq(users.uuid, userUUID))
+}
+
 export async function updateUserPassword(userUUID: UUID, password: string): Promise<void> {
 	await db().update(passwordTraits)
 		.set({ passwordHash: await hashPassword(password) })

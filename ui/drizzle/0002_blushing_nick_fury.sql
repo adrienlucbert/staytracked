@@ -1,0 +1,3 @@
+ALTER TYPE "public"."notification" ADD VALUE 'self_new_livetrack';--> statement-breakpoint
+ALTER TABLE "users" ALTER COLUMN "notification_preferences" SET DEFAULT '{"follow_request":{"email":true,"push":true},"new_livetrack":{"email":true,"push":true},"self_new_livetrack":{"email":true,"push":true}}'::jsonb;--> statement-breakpoint
+ALTER TABLE "users" ADD COLUMN "is_incognito" boolean DEFAULT false;

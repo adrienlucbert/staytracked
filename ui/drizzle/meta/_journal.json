@@ -15,6 +15,13 @@
       "when": 1773137986774,
       "tag": "0001_careless_proudstar",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1781978245757,
+      "tag": "0002_blushing_nick_fury",
+      "breakpoints": true
     }
   ]
 }

@@ -19,6 +19,7 @@ export const users = pgTable('users', {
 	email: text('email'),
 	isEmailVerified: boolean('is_email_verified').notNull().default(false),
 	preferredLocale: text('preferred_locale').default('en'),
+	isIncognito: boolean('is_incognito').default(false),
 	notificationPreferences: jsonb('notification_preferences').$type<PreferencePerNotification>().notNull().default(defaultPreferencePerNotification),
 }, (table) => ({
 	nameFormatCheck: check(

@@ -1,15 +1,19 @@
 <script lang="ts">
 	import { toast } from 'svelte-sonner';
 	import { SvelteURL } from 'svelte/reactivity';
+	import * as Card from '$lib/components/ui/card';
+	import * as Alert from '$lib/components/ui/alert';
 	import { page } from '$app/state';
 	import LinkSetupAlert from '$lib/components/link-setup-alert.svelte';
 	import LivetrackIframe from '$lib/components/livetrack-iframe.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
 	import { pages } from '$lib/pages.svelte.js';
+	import { Switch } from '$lib/components/ui/switch/index.js';
 	import * as Select from '$lib/components/ui/select';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
+	import HatGlassesIcon from '@lucide/svelte/icons/hat-glasses';
 	import GlobeIcon from '@lucide/svelte/icons/globe';
 	import LockKeyHoleIcon from '@lucide/svelte/icons/lock-keyhole';
 	import LinkIcon from '@lucide/svelte/icons/link';
@@ -37,6 +41,34 @@
 	]);
 	const url = new SvelteURL(page.url);
 	let active = $derived(url.hash || '#manage-access');
+
+	let updatingIncognitoMode = $state(false);
+	let isIncognito = $derived(user?.isIncognito ?? false);
+	async function updateIncognitoMode(incognito: boolean) {
+		updatingIncognitoMode = true;
+
+		try {
+			const res = await fetch('/api/user/incognito', {
+				method: 'PUT',
+				body: JSON.stringify({ is_incognito: incognito })
+			});
+			if (res.ok && user) {
+				isIncognito = incognito;
+			} else {
+				const { message } = await res.json().catch(() => {
+					throw m.unexpected_server_error({ code: res.status });
+				});
+				throw message;
+			}
+		} catch (error) {
+			toast.error(m.an_error_occurred(), {
+				description: String(error),
+				duration: 10000
+			});
+		} finally {
+			updatingIncognitoMode = false;
+		}
+	}
 
 	let updatingLinkVisibility = $state(false);
 	async function updateLinkVisibility(isPublic: boolean) {
@@ -79,7 +111,7 @@
 						class="mx-auto flex w-full max-w-2xl flex-col content-start gap-4 p-4 py-5 pb-9 text-justify"
 					>
 						<div class="p-2">
-							<p class="text-muted-foreground mt-6 text-center text-xl">
+							<p class="mt-6 text-center text-xl text-muted-foreground">
 								{m.no_livetrack_link_setup_yet()}
 							</p>
 							<div class="mt-6 flex justify-center gap-4">
@@ -140,7 +172,7 @@
 											</Select.Root>
 										</span>
 										<span
-											class="text-muted-foreground col-start-2 grid justify-items-start gap-1 pl-2 text-sm [&_p]:leading-relaxed"
+											class="col-start-2 grid justify-items-start gap-1 pl-2 text-sm text-muted-foreground [&_p]:leading-relaxed"
 										>
 											{#if trackingLink.isPublic}
 												{m.ma_anyone_with_the_link_description()}
@@ -165,12 +197,29 @@
 										{m.copy_link()}
 									</Button>
 								</div>
+
+								<Alert.Root variant={isIncognito ? 'warning' : 'default'} class="mt-6">
+									<HatGlassesIcon class="mb-2" />
+									<Alert.Title class="mb-2 line-clamp-none flex justify-between tracking-normal">
+										<span>{m.ma_incognito_mode_title()}</span>
+										<Switch
+											disabled={updatingIncognitoMode}
+											aria-label={m.toggle_notifications()}
+											class="cursor-pointer"
+											id="toggle-incognito"
+											bind:checked={() => isIncognito, async (v) => await updateIncognitoMode(v)}
+										/>
+									</Alert.Title>
+									<Alert.Description class="block">
+										{@html m.ma_incognito_mode_description()}
+									</Alert.Description>
+								</Alert.Root>
 							</div>
 
 							<h3>{m.ma_people_with_access_title()}</h3>
 
-							<div class="mb-4 mt-6 flex flex-col gap-4 md:flex-row">
-								<p class="text-muted-foreground grow text-sm">
+							<div class="mt-6 mb-4 flex flex-col gap-4 md:flex-row">
+								<p class="grow text-sm text-muted-foreground">
 									{@html m.ma_people_with_access_text()}
 								</p>
 								<InvitePeopleForm action="?/invitePeople" />
@@ -186,7 +235,7 @@
 								</div>
 							{/if}
 						{:else}
-							<p class="text-muted-foreground mt-6 text-center text-xl">
+							<p class="mt-6 text-center text-xl text-muted-foreground">
 								{m.no_livetrack_link_setup_yet()}
 							</p>
 							<div class="mt-6 flex justify-center gap-4">

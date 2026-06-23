@@ -3,7 +3,7 @@ import { APP_NAME } from "$env/static/private";
 import { getAthleteLink } from '$lib/link';
 import type { Users } from "$lib/server/db/schema";
 import { send } from "$lib/server/email/sender";
-import { NewActivity, NewFollowRequest } from "$lib/server/email/templates";
+import { NewActivity, NewFollowRequest, SelfNewActivity } from "$lib/server/email/templates";
 import { Notification } from '$lib/types/notifications';
 import type { Notifier } from "./notifier";
 
@@ -39,8 +39,7 @@ export const EmailNotifier = {
 			return
 		}
 
-		await send(NewActivity(user.name), {
-			username: user.name,
+		await send(SelfNewActivity(), {
 			athleteURL: getAthleteLink(user.name).toString(),
 			accountURL: `${env.PUBLIC_URL ?? 'http://localhost'}/account`,
 		}, user.email, user.preferredLocale)

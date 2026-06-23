@@ -36,18 +36,20 @@ export async function PUT({ params, request }: RequestEvent) {
 			if (!user) {
 				throw m.invalid_user_uuid()
 			}
+
 			const sendJobs: Promise<void>[] = []
 			sendJobs.push(notify(Notification.SELF_NEW_LIVETRACK, user))
 
-			const followers = await listFollowers(updatedTrackingLink.userUUID as UUID)
+			if (!updatedTrackingLink.user.isIncognito) {
+				const followers = await listFollowers(updatedTrackingLink.userUUID as UUID)
 
-			for (const follow of followers) {
-				if (follow.status !== FollowStatus.APPROVED || !follow.enabledNotifications) {
-					continue
+				for (const follow of followers) {
+					if (follow.status !== FollowStatus.APPROVED || !follow.enabledNotifications) {
+						continue
+					}
+					sendJobs.push(notify(Notification.NEW_LIVETRACK, follow.followerUser, user))
 				}
-				sendJobs.push(notify(Notification.NEW_LIVETRACK, follow.followerUser, user))
 			}
-
 			await Promise.all(sendJobs)
 		} catch (e) { console.error(e) }
 	} catch (e) {

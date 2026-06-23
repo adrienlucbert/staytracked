@@ -1,10 +1,10 @@
 import { db } from '$lib/server/db';
 import { trackingLinks, users, type TrackingLinks } from '$lib/server/db/schema';
 import { type UUID } from 'crypto';
-import { eq } from 'drizzle-orm';
+import { eq, and } from 'drizzle-orm';
 import { m } from '$lib/paraglide/messages.js';
 
-export type TrackingLinkWithUser = TrackingLinks & { user: { uuid: string, name: string } }
+export type TrackingLinkWithUser = TrackingLinks & { user: { uuid: string, name: string, isIncognito: boolean } }
 export type PublicTrackingLinkWithUser = Omit<TrackingLinks, 'uuid'> & { user: { uuid: string, name: string } }
 
 export async function updateTrackingLink(linkUUID: UUID, link: string): Promise<TrackingLinkWithUser> {
@@ -29,6 +29,7 @@ export async function updateTrackingLink(linkUUID: UUID, link: string): Promise<
 			columns: {
 				uuid: true,
 				name: true,
+				isIncognito: true,
 			},
 			where: eq(users.uuid, trackingLink.userUUID as UUID),
 		})

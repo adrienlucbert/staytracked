@@ -123,15 +123,17 @@ export async function getUserByUUID(userUUID: UUID): Promise<Users | undefined> 
 	})
 }
 
-export async function getUserUUID(identifier: string): Promise<UUID | undefined> {
+export async function getUserByIdentifier(identifier: string): Promise<Users> {
+	let user: Users | undefined
 	if (/^[0-9A-Fa-f]{8}(-[0-9A-Fa-f]{4}){3}-[0-9A-Fa-f]{12}$/.test(identifier)) {
-		return identifier as UUID
+		user = await getUserByUUID(identifier as UUID)
+	} else {
+		user = await getUserByName(identifier)
 	}
-	const user = await getUserByName(identifier)
 	if (!user) {
 		throw m.invalid_athlete_identifier()
 	}
-	return user.uuid as UUID
+	return user
 }
 
 export async function getUserByNameOrUUID(identifier: string): Promise<Users | undefined> {

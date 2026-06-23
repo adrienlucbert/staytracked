@@ -42,6 +42,8 @@ export const EmailNotifier = {
 		await send(SelfNewActivity(), {
 			athleteURL: getAthleteLink(user.name).toString(),
 			accountURL: `${env.PUBLIC_URL ?? 'http://localhost'}/account`,
+			isIncognito: user.isIncognito ?? false,
+			incognitoToggleUrl: `${env.PUBLIC_URL ?? 'http://localhost'}/my-link`,
 		}, user.email, user.preferredLocale)
 	},
 } satisfies Notifier

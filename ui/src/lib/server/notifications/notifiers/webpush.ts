@@ -37,7 +37,7 @@ export const WebPushNotifier = {
 	[Notification.SELF_NEW_LIVETRACK]: async (target: Users): Promise<void> => {
 		const locale = isLocale(target.preferredLocale) ? target.preferredLocale : getLocale()
 		notifyUser(target.uuid as UUID, {
-			title: m.notif_self_new_activity_title({}, { locale }),
+			title: target.isIncognito ? m.notif_self_new_activity_incognito_title({}, { locale }) : m.notif_self_new_activity_title({}, { locale }),
 			icon: "https://img.icons8.com/color/96/cycling-road--v1.png",
 			badge: "https://img.icons8.com/color/96/cycling-road--v1.png",
 			data: {

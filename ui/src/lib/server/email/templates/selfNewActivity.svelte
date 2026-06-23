@@ -7,8 +7,10 @@
 		locale?: Locale;
 		athleteURL: string;
 		accountURL: string;
+		isIncognito: boolean;
+		incognitoToggleUrl: string;
 	}
-	const { locale, athleteURL, accountURL }: Props = $props();
+	const { locale, athleteURL, accountURL, isIncognito, incognitoToggleUrl }: Props = $props();
 </script>
 
 <Container>
@@ -20,8 +22,16 @@
 		{m.mail_new_activity_button({}, { locale })}
 	</Button>
 	<Container class="mx-auto mt-8 max-w-lg">
+		{#if isIncognito}
+			<Paragraph class="text-center text-sm">
+				{@html m.mail_self_new_activity_p1(
+					{ link: incognitoToggleUrl, label: m.pages_my_link({}, { locale }) },
+					{ locale }
+				)}
+			</Paragraph>
+		{/if}
 		<Paragraph class="text-center text-sm">
-			{@html m.mail_self_new_activity_p1(
+			{@html m.mail_self_new_activity_p2(
 				{ link: accountURL, label: m.pages_account({}, { locale }) },
 				{ locale }
 			)}

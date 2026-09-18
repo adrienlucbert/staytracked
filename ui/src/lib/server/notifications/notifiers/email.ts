@@ -1,10 +1,11 @@
 import { env } from '$env/dynamic/public';
 import { APP_NAME } from "$env/static/private";
-import { getAthleteLink } from '$lib/link';
-import type { Users } from "$lib/server/db/schema";
+import { disclosureLink, getAthleteLink } from '$lib/link';
+import type { TrackingLinks, Users } from "$lib/server/db/schema";
 import { send } from "$lib/server/email/sender";
 import { NewActivity, NewFollowRequest, SelfNewActivity } from "$lib/server/email/templates";
 import { Notification } from '$lib/types/notifications';
+import { ActivityDisclosure } from '$lib/types/privacy';
 import type { Notifier } from "./notifier";
 
 export const EmailNotifier = {
@@ -34,16 +35,18 @@ export const EmailNotifier = {
 		}, target.email, target.preferredLocale)
 	},
 
-	[Notification.SELF_NEW_LIVETRACK]: async (user: Users): Promise<void> => {
+	[Notification.SELF_NEW_LIVETRACK]: async (user: Users, trackingLink: TrackingLinks): Promise<void> => {
 		if (!user.email) {
 			return
 		}
 
-		await send(SelfNewActivity(), {
+		await send(SelfNewActivity(trackingLink.disclosure as ActivityDisclosure), {
 			athleteURL: getAthleteLink(user.name).toString(),
 			accountURL: `${env.PUBLIC_URL ?? 'http://localhost'}/account`,
-			isIncognito: user.isIncognito ?? false,
-			incognitoToggleUrl: `${env.PUBLIC_URL ?? 'http://localhost'}/my-link`,
+			disclosure: trackingLink.disclosure as ActivityDisclosure,
+			shareURL: disclosureLink('share').toString(),
+			silentURL: disclosureLink('silent').toString(),
+			privacyModeURL: `${env.PUBLIC_URL ?? 'http://localhost'}/my-link`,
 		}, user.email, user.preferredLocale)
 	},
 } satisfies Notifier

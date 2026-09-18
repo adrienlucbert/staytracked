@@ -6,6 +6,7 @@ import RocketIcon from '@lucide/svelte/icons/rocket';
 import CircleUserRoundIcon from '@lucide/svelte/icons/circle-user-round';
 import LogOutIcon from '@lucide/svelte/icons/log-out';
 import LinkIcon from '@lucide/svelte/icons/link';
+import BellRingIcon from '@lucide/svelte/icons/bell-ring';
 import { m } from '$lib/paraglide/messages.js';
 
 export type Page = {
@@ -37,6 +38,12 @@ const _pages = {
 		title: m.pages_my_link(),
 		url: `/my-link`,
 		icon: LinkIcon,
+	},
+	'shareActivity': {
+		title: m.pages_share_activity(),
+		url: '/share-activity',
+		icon: BellRingIcon,
+		isVisible: false,
 	},
 	'manageAccess': {
 		title: m.pages_manage_access(),

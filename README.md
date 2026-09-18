@@ -35,6 +35,10 @@ This project is designed with open-source and self-hosting in mind, it's meant t
 - Manage access to your tracking link:
   - Public: Anyone with the link can access the session
   - Restricted: Only people explicitly invited or allowed can access the session
+- Choose how each activity is disclosed:
+  - Share every activity: the session is visible and followers are notified as soon as it starts
+  - Ask me every time: the session starts hidden, only you are notified, and you choose from that notification (or from the app) whether to notify your followers or keep it silent
+  - Incognito: the session is hidden and no follower is notified
 - Followers can choose to get notified when you start a session
 - Graph of visits history per user
 - Account creation via email, Google or Github

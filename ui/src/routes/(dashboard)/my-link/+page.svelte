@@ -9,7 +9,6 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
 	import { pages } from '$lib/pages.svelte.js';
-	import { Switch } from '$lib/components/ui/switch/index.js';
 	import * as Select from '$lib/components/ui/select';
 	import { Input } from '$lib/components/ui/input';
 	import { Label } from '$lib/components/ui/label';
@@ -23,6 +22,8 @@
 	import { InvitePeopleForm } from '$lib/components/forms/invitePeople';
 	import { m } from '$lib/paraglide/messages.js';
 	import Sidebar from '$lib/components/sidebars/sidebar.svelte';
+	import BellRingIcon from '@lucide/svelte/icons/bell-ring';
+	import { ActivityDisclosure, PrivacyMode, type DisclosureDecision } from '$lib/types/privacy';
 
 	let { data } = $props();
 	let { user, link, flags } = data;
@@ -42,18 +43,32 @@
 	const url = new SvelteURL(page.url);
 	let active = $derived(url.hash || '#manage-access');
 
-	let updatingIncognitoMode = $state(false);
-	let isIncognito = $derived(user?.isIncognito ?? false);
-	async function updateIncognitoMode(incognito: boolean) {
-		updatingIncognitoMode = true;
+	let updatingPrivacyMode = $state(false);
+	let privacyMode = $state((user?.privacyMode as PrivacyMode) ?? PrivacyMode.PUBLIC);
+	let disclosure = $state(link?.disclosure as ActivityDisclosure | undefined);
+	let isActivityHidden = $derived(disclosure !== ActivityDisclosure.SHARED);
+
+	const privacyModeLabels: Record<PrivacyMode, () => string> = {
+		[PrivacyMode.PUBLIC]: m.ma_privacy_mode_public,
+		[PrivacyMode.ON_DEMAND]: m.ma_privacy_mode_on_demand,
+		[PrivacyMode.INCOGNITO]: m.ma_privacy_mode_incognito
+	};
+	const privacyModeDescriptions: Record<PrivacyMode, () => string> = {
+		[PrivacyMode.PUBLIC]: m.ma_privacy_mode_public_description,
+		[PrivacyMode.ON_DEMAND]: m.ma_privacy_mode_on_demand_description,
+		[PrivacyMode.INCOGNITO]: m.ma_privacy_mode_incognito_description
+	};
+
+	async function updatePrivacyMode(mode: PrivacyMode) {
+		updatingPrivacyMode = true;
 
 		try {
-			const res = await fetch('/api/user/incognito', {
+			const res = await fetch('/api/user/privacy-mode', {
 				method: 'PUT',
-				body: JSON.stringify({ is_incognito: incognito })
+				body: JSON.stringify({ privacy_mode: mode })
 			});
 			if (res.ok && user) {
-				isIncognito = incognito;
+				privacyMode = mode;
 			} else {
 				const { message } = await res.json().catch(() => {
 					throw m.unexpected_server_error({ code: res.status });
@@ -66,7 +81,33 @@
 				duration: 10000
 			});
 		} finally {
-			updatingIncognitoMode = false;
+			updatingPrivacyMode = false;
+		}
+	}
+
+	let decidingDisclosure = $state(false);
+	async function decideDisclosure(decision: DisclosureDecision) {
+		decidingDisclosure = true;
+
+		try {
+			const res = await fetch(`/api/link/disclosure/${decision}`, { method: 'PUT' });
+			const body = await res.json().catch(() => {
+				throw m.unexpected_server_error({ code: res.status });
+			});
+			if (!res.ok) {
+				throw body.message;
+			}
+			disclosure = body.disclosure;
+			toast.success(
+				disclosure === ActivityDisclosure.SHARED ? m.sa_shared_title() : m.sa_silent_title()
+			);
+		} catch (error) {
+			toast.error(m.an_error_occurred(), {
+				description: String(error),
+				duration: 10000
+			});
+		} finally {
+			decidingDisclosure = false;
 		}
 	}
 
@@ -105,13 +146,15 @@
 		{#key active}
 			{#if active === '#preview'}
 				{#if trackingLink?.link}
-					{#if !isIncognito}
+					{#if !isActivityHidden}
 						<LivetrackIframe class="w-full flex-grow" link={trackingLink} />
 					{:else}
 						<NarrowSection class="h-full">
 							<div class="grid place-items-center">
 								<div class="text-center">
-									<h2 class="flex flex-col items-center gap-5 border-none px-2 py-8 font-bold leading-[1.2] md:flex-row">
+									<h2
+										class="flex flex-col items-center gap-5 border-none px-2 py-8 leading-[1.2] font-bold md:flex-row"
+									>
 										<span>{m.livetrack_session_not_started()}</span>
 									</h2>
 									<div class="flex justify-center gap-4">
@@ -216,22 +259,69 @@
 									</Button>
 								</div>
 
-								<Alert.Root variant={isIncognito ? 'warning' : 'default'} class="mt-6">
+								<Alert.Root
+									variant={privacyMode === PrivacyMode.PUBLIC ? 'default' : 'warning'}
+									class="mt-6"
+								>
 									<HatGlassesIcon class="mb-2" />
-									<Alert.Title class="mb-2 line-clamp-none flex justify-between tracking-normal">
-										<span>{m.ma_incognito_mode_title()}</span>
-										<Switch
-											disabled={updatingIncognitoMode}
-											aria-label={m.toggle_notifications()}
-											class="cursor-pointer"
-											id="toggle-incognito"
-											bind:checked={() => isIncognito, async (v) => await updateIncognitoMode(v)}
-										/>
+									<Alert.Title
+										class="mb-2 line-clamp-none flex justify-between gap-2 tracking-normal"
+									>
+										<span>{m.ma_privacy_mode_title()}</span>
+										<Select.Root
+											disabled={updatingPrivacyMode}
+											type="single"
+											bind:value={
+												() => privacyMode, async (v) => await updatePrivacyMode(v as PrivacyMode)
+											}
+										>
+											<Select.Trigger
+												class="cursor-pointer"
+												aria-label={m.ma_privacy_mode_title()}
+												variant="ghost"
+											>
+												{privacyModeLabels[privacyMode]()}
+											</Select.Trigger>
+											<Select.Content>
+												{#each Object.values(PrivacyMode) as mode (mode)}
+													<Select.Item value={mode}>{privacyModeLabels[mode]()}</Select.Item>
+												{/each}
+											</Select.Content>
+										</Select.Root>
 									</Alert.Title>
 									<Alert.Description class="block">
-										{@html m.ma_incognito_mode_description()}
+										{@html privacyModeDescriptions[privacyMode]()}
 									</Alert.Description>
 								</Alert.Root>
+
+								{#if disclosure === ActivityDisclosure.PENDING}
+									<Alert.Root variant="warning" class="mt-4">
+										<BellRingIcon class="mb-2" />
+										<Alert.Title class="mb-2 line-clamp-none tracking-normal">
+											{m.sa_pending_title()}
+										</Alert.Title>
+										<Alert.Description class="block">
+											<p class="mb-4">{m.sa_pending_description()}</p>
+											<div class="flex flex-col gap-2 sm:flex-row">
+												<Button
+													disabled={decidingDisclosure}
+													onclick={() => decideDisclosure('share')}
+												>
+													<BellRingIcon />
+													{m.sa_share_activity()}
+												</Button>
+												<Button
+													variant="outline"
+													disabled={decidingDisclosure}
+													onclick={() => decideDisclosure('silent')}
+												>
+													<HatGlassesIcon />
+													{m.sa_keep_silent()}
+												</Button>
+											</div>
+										</Alert.Description>
+									</Alert.Root>
+								{/if}
 							</div>
 
 							<h3>{m.ma_people_with_access_title()}</h3>

@@ -4,8 +4,11 @@ import { githubTraits, googleTraits, passwordTraits, type GithubTraits, type Goo
 import { webpushSubscriptions } from '../notifications/webpush';
 import { enumToPgEnum } from '../../utils';
 import { Notification } from '../../../../types/notifications';
+import { PrivacyMode } from '../../../../types/privacy';
 
 export const notification = pgEnum('notification', enumToPgEnum(Notification))
+
+export const privacyMode = pgEnum('privacy_mode', enumToPgEnum(PrivacyMode))
 
 export type PreferencePerNotification = Record<Notification, { email: boolean, push: boolean }>
 
@@ -19,7 +22,7 @@ export const users = pgTable('users', {
 	email: text('email'),
 	isEmailVerified: boolean('is_email_verified').notNull().default(false),
 	preferredLocale: text('preferred_locale').default('en'),
-	isIncognito: boolean('is_incognito').default(false),
+	privacyMode: privacyMode('privacy_mode').notNull().default(PrivacyMode.PUBLIC),
 	notificationPreferences: jsonb('notification_preferences').$type<PreferencePerNotification>().notNull().default(defaultPreferencePerNotification),
 }, (table) => ({
 	nameFormatCheck: check(

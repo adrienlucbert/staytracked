@@ -22,6 +22,20 @@
       "when": 1781978245757,
       "tag": "0002_blushing_nick_fury",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1789718462961,
+      "tag": "0003_privacy_mode_and_disclosure",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1789718469069,
+      "tag": "0004_drop_is_incognito",
+      "breakpoints": true
     }
   ]
 }

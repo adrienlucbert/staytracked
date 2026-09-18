@@ -5,6 +5,7 @@ import { hashPassword } from '$lib/server/auth/password';
 import { users, type Users, githubTraits, googleTraits, passwordTraits, type GithubTraits, type GoogleTraits, type PasswordTraits, type Traits, trackingLinks } from '$lib/server/db/schema';
 import { m } from '$lib/paraglide/messages.js';
 import { getLocale, type Locale } from '$lib/paraglide/runtime';
+import type { PrivacyMode } from '$lib/types/privacy';
 
 export enum AuthMethod {
 	Password = 'password',
@@ -201,9 +202,9 @@ export async function setUserPreferredLocale(userUUID: UUID, locale: Locale): Pr
 		.where(eq(users.uuid, userUUID))
 }
 
-export async function setUserIsIncognito(userUUID: UUID, isIncognito: boolean): Promise<void> {
+export async function setUserPrivacyMode(userUUID: UUID, privacyMode: PrivacyMode): Promise<void> {
 	await db().update(users)
-		.set({ isIncognito })
+		.set({ privacyMode })
 		.where(eq(users.uuid, userUUID))
 }
 

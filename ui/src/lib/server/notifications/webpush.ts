@@ -9,7 +9,9 @@ import { StatusCodes } from "http-status-codes";
 
 webpush.setVapidDetails(env.PUBLIC_URL, VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY);
 
-export type NotificationPayload = { title: string } & NotificationOptions
+export type NotificationAction = { action: string, title: string, icon?: string }
+
+export type NotificationPayload = { title: string, actions?: NotificationAction[] } & NotificationOptions
 
 export async function sendNotification(subscription: PushSubscription, payload: NotificationPayload): Promise<void> {
 	try {

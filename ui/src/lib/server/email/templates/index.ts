@@ -1,6 +1,7 @@
 import type { Component, ComponentProps } from "svelte";
 import { m } from '$lib/paraglide/messages.js';
 import type { Locale } from "$lib/paraglide/runtime";
+import { ActivityDisclosure } from "$lib/types/privacy";
 
 export type EmailTemplate<T extends Component<{ locale?: Locale } & ComponentProps<T>, any, any>> = {
 	subject: (locale?: Locale) => string;
@@ -32,7 +33,9 @@ export const NewActivity: ((username: string) => EmailTemplate<typeof NewActivit
 })
 
 import { default as SelfNewActivityTemplate } from "./selfNewActivity.svelte";
-export const SelfNewActivity: (() => EmailTemplate<typeof SelfNewActivityTemplate>) = () => ({
-	subject: (locale) => m.mail_self_new_activity_subject({}, { locale }),
+export const SelfNewActivity: ((disclosure: ActivityDisclosure) => EmailTemplate<typeof SelfNewActivityTemplate>) = (disclosure) => ({
+	subject: (locale) => disclosure === ActivityDisclosure.PENDING
+		? m.mail_self_new_activity_pending_subject({}, { locale })
+		: m.mail_self_new_activity_subject({}, { locale }),
 	template: SelfNewActivityTemplate,
 })

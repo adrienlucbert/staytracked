@@ -4,7 +4,6 @@ COPY package*.json *.lock ./
 RUN yarn install --production=false --frozen-lockfile
 COPY . .
 RUN yarn build
-RUN yarn db:generate
 
 FROM node:22-alpine AS runner
 WORKDIR /app

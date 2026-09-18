@@ -55,7 +55,8 @@ services:
     environment:
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
     depends_on:
-      - migrate
+      migrate:
+        condition: service_completed_successfully
     networks:
       - staytracked-network
 

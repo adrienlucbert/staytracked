@@ -9,6 +9,6 @@
 	}: { children: Snippet; class?: string } = $props();
 </script>
 
-<div class={cn('min-h-[calc(100vh-var(--header-height))] w-full', className)} {...restProps}>
+<div class={cn('min-h-[calc(100dvh-var(--header-height))] w-full', className)} {...restProps}>
 	{@render children?.()}
 </div>

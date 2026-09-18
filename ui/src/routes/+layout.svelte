@@ -46,7 +46,7 @@
 		<AppSidebar />
 	{/if}
 
-	<FullPage class="flex flex-col">
+	<FullPage class="flex min-h-dvh flex-col">
 		<AppHeader {data} actions={Object.values(headerActions)} />
 
 		<GrowContainer class="px-4 md:px-0">

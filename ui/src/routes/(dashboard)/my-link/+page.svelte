@@ -139,10 +139,10 @@
 	}
 </script>
 
-<div class="flex h-full w-full flex-col md:flex-row">
+<div class="flex min-h-[calc(100dvh-var(--header-height))] w-full flex-col md:flex-row">
 	<Sidebar items={sidebarItems} {url} {active} />
 	<Separator class="mx-0 hidden md:block" orientation="vertical" />
-	<div class="flex w-full flex-col">
+	<div class="flex w-full grow flex-col">
 		{#key active}
 			{#if active === '#preview'}
 				{#if trackingLink?.link}
